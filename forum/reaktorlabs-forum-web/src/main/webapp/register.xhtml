@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+
+    <h:body>
+           
+            <p:toolbar id="tb">
+    <f:facet name="left">
+        <p:commandButton type="button" value="Logout" action="#{userController.logout()}"/>
+        <p:commandButton type="button" value="Open" icon="ui-icon-folder-open"/>
+    </f:facet>
+    <f:facet name="right">
+        <p:commandButton type="button" title="Save" icon="ui-icon-disk"/>
+        <p:commandButton type="button" title="Delete" icon="ui-icon-trash"/>
+        <p:commandButton type="button" title="Print" icon="ui-icon-print"/>
+    </f:facet>
+</p:toolbar>
+            
+        <div class="ui-g-12 ui-g-nopad">
+            
+     <div class="ui-g">
+         <div class="ui-g-12 ui-md-6">
+             <h3>Login</h3> 
+
+     </div>
+       
+         <div class="ui-g-12 ui-md-6">
+
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="username">Username</h:outputLabel>
+                <h:inputText value="#{userController.user.username}" id="username"></h:inputText>
+                <br/>
+                <br/>
+                <h:outputLabel for="password">Password</h:outputLabel>
+                <h:inputSecret value="#{userController.user.password}" id="password"></h:inputSecret>
+                <br/>
+                <br/>            
+                
+                <h:outputLabel for="username">E-mail</h:outputLabel>
+                <h:inputText value="#{userController.user.email}" id="email"></h:inputText>
+                <br/>
+                
+                    <h:outputLabel for="username">First Name</h:outputLabel>
+                    <h:inputText value="#{userController.user.firstName}" id="firstName"></h:inputText>
+                <br/>
+                
+                <h:outputLabel for="username">Last Name</h:outputLabel>
+                <h:inputText value="#{userController.user.lastName}" id="lastName"></h:inputText>
+                <br/>
+                
+                    <h:outputLabel for="username">Description</h:outputLabel>
+                    <h:inputText value="#{userController.user.description}" id="description"></h:inputText>
+                <br/>
+                
+                <p:commandButton value="Submit" ajax="false" icon="ui-icon-disk" action="#{userController.register()}"/>
+            </h:panelGrid>
+        </h:form>
+             <p:link value="login" outcome="/login.xhtml"/>
+         </div>
+        </div>
+        </div>
+    </h:body>
+
+</html>
+

@@ -1,0 +1,111 @@
+
+/* 
+    Created on : 2018.06.17., 11:52:22
+    Author     : nazimelmardi
+*/
+
+body {
+    background-color: #E2E3E3;
+    height: 100%;
+}
+
+.container {
+    background-color: #E2E3E3;
+    height: 100%;
+    box-shadow: 10px;
+}
+
+#tb {
+    width:100%!important;
+    margin-bottom:20px;
+}
+
+.leftside {
+    background-color: #1F3E55;
+    min-height: 800px;
+    display:block;
+    align-content: center;
+    
+}
+
+.rightside {
+    background-color: #9DACB7;
+    min-height: 800px;
+    display:block;
+}
+
+.login {
+    display: table-cell;
+    vertical-align: middle;
+    align-self: center;
+}
+
+.register {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#forumentrylist {
+    background-color: #1F3E55;
+    width:100%;
+    padding: 15px;
+}
+
+#basic {
+    background-color: #9DACB7;
+}
+
+.new-post span {
+    display:block;
+}
+
+.new-post input {
+    margin-bottom:20px;
+}
+
+.new-post input, .new-post textarea  {
+    width:50%;
+    display:block;
+}
+
+.test1 {
+    margin: auto;
+    background-color: #9DACB7;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.comments {
+    min-height: 800px;
+    max-height: 800px;
+}
+
+.leftside2 {
+    background-color: #1F3E55;
+    min-height: 100%;
+    display:block;
+    margin: 0 auto;
+    padding:15px;
+    color:#FFF;
+}
+
+.leftside2 .panel-body {
+    text-align: justify;
+}
+
+.rightside2 {
+    background-color: #9DACB7;
+    min-height: 100%;
+    display:block;
+    margin:0 auto;
+    padding:15px;
+}
+
+#form1{
+    padding:15px;
+}
+
+.commentcard {
+    min-height: 100px;
+}

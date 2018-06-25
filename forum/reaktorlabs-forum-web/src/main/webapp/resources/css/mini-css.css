@@ -1,0 +1,100 @@
+body {
+       background: #67ae55 no-repeat center center fixed;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       max-width: 100%;
+       overflow-x: hidden;
+     }
+
+.header {
+       background-color: #F1F1F1;
+       text-align: center;
+       padding: 15px;
+     }
+
+@media (min-width: 768px) {
+.navbar-brand.abs
+      {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          text-align: center;
+      }
+  }
+
+
+.navbar{
+margin-bottom: 10px;
+}
+
+#checkbox-Remember{
+    margin-left:15px;
+}
+
+
+.errorTxt {
+pading-bottom:25px;
+font-size:14px;
+font-weight:bold;
+
+}
+
+#monster {
+
+    border-radius: 18px 8px;
+    max-width:20%;
+    max-height: 41px;
+}
+
+
+#img1 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px 15px;
+    box-shadow: 10px 10px 35px black;
+    z-index:2;
+}
+
+#img2 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px 15px;
+    box-shadow: 10px 10px 35px black;
+    z-index:1;
+}
+
+#first-form-container{
+background : white;
+z-index:3;
+min-height: 650px;
+border-radius: 15px 15px;
+box-shadow: 10px 10px 35px black;
+}
+
+#second-form-container{
+background : white;
+z-index:3;
+min-height: 650px;
+border-radius: 15px 15px;
+box-shadow: 10px 10px 35px black;
+margin-top:15px;
+}
+
+.padding{
+padding : 15px;
+margin : 10px;
+}
+
+
+
+#send-button {
+background:linear-gradient(#67ae55, #578843)
+}
+
+.btn {
+font-weight:bold;
+color:white;
+}
+

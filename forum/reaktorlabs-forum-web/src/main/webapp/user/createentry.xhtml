@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/template/bstemplate.xhtml">
+        <ui:define name="head">
+            <h:head>
+                <title>New Forum Entry</title>
+            </h:head>
+        </ui:define>
+        <ui:define name="body">
+            <h:body>
+                
+             <p:toolbar id="tb">
+    <p:toolbarGroup align="left">
+
+        <p:button value="Main" icon="ui-icon-document" outcome="/main.xhtml" />
+        <p:button value="List of Entries" icon="ui-icon-document" outcome="/user/forumentrylist.xhtml"/>
+        <p:commandButton type="button" value="Logout" icon="ui-icon-document" action="#{userController.logout()}"/>
+
+    </p:toolbarGroup>
+</p:toolbar>
+ 
+ 
+<p:sticky target="tb" />
+                
+                <div class="row">
+                <div id="forumentrylist" align="center">
+                 <h1>Create Entry</h1>
+                <h:form class="new-post">
+                    <p:inputText value="#{entryControllerSave.forumEntry.title}"/>
+               
+                <p:inputTextarea rows="10" cols="30" counter="display" maxlength="300" counterTemplate="{0} characters remaining." autoResize="false" value="#{entryControllerSave.forumEntry.entryText}" />
+                    <h:outputText id="display" />
+                    <p:commandButton ajax="false" action="#{entryControllerSave.saveDateAndUsername(request)}" value="Save"/>
+                </h:form>
+                </div>
+                    </div>
+            </h:body>              
+        </ui:define>
+    </ui:composition>
+
+</html>

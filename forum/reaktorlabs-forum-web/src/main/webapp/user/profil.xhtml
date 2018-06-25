@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/template/bstemplate.xhtml">
+        <ui:define name="head">
+            <h:head>
+                <title>Profil</title>
+            </h:head>
+        </ui:define>
+        <ui:define name="body">
+            <h:body>
+                <div class="row"></div>
+                <div class="col-sm-12 col-md-6 leftside">
+                    <div>
+                        <h1>My Profile</h1>
+                    </div> 
+                    <div>
+                        <div class="col-6">
+                            First name: <h:outputText value=""/>
+                        </div>
+                        <div class="col-6">
+                            Surname: <h:outputText value=""/>
+                        </div>
+                    </div>
+                    <div>
+                        E-mail: <h:outputText value=""/>
+                    </div>
+                    <div>
+                        Description:
+                    </div>
+                    <div>
+                        <h:outputText value=""/>
+                    </div>  
+                </div>
+                             
+                <div class="col-sm-12 col-md-6 rightside">
+                    <h1>My Forum Entries</h1>
+                    
+                    <div id="forumentrylist" align="center">
+                    <h:form>
+                        <ui:repeat var="entries" value="#{entryController.entries}">
+                          
+                        <div class="card border-primary mb-3" style="max-width: 30rem;">
+                            <div class="card-header">
+                                                   
+                                <h:outputText value=" Title: #{entries.title}" />
+
+                            </div>
+                        <div class="card-body text-primary">
+                            <div class="col6">                                                     
+                                <h:outputText value=" Written by: #{entries.username}" />
+                            </div>
+                            <div class="col-6">
+                        <p:button value="Details" outcome="/user/entrydetails.xhtml">
+                           <f:param name="entryid" value="#{entries.id}"/>
+                        </p:button>                                
+                            </div>
+                            
+                            <p class="card-text">
+                                   
+                                <h:outputText value=" Date: #{entries.date}" />
+
+                            </p>
+                        </div>
+                        </div>
+
+                        </ui:repeat>
+                    </h:form>             
+                    </div>
+                </div>
+                </div>
+            </h:body>              
+        </ui:define>
+    </ui:composition>
+
+</html>

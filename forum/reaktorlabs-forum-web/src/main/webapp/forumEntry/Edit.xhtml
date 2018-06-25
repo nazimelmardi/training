@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditForumEntryTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditForumEntryLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{forumEntryController.selected.id}" title="#{bundle.EditForumEntryTitle_id}" required="true" requiredMessage="#{bundle.EditForumEntryRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditForumEntryLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{forumEntryController.selected.title}" title="#{bundle.EditForumEntryTitle_title}" required="true" requiredMessage="#{bundle.EditForumEntryRequiredMessage_title}"/>
+                    <h:outputLabel value="#{bundle.EditForumEntryLabel_entryText}" for="entryText" />
+                    <h:inputText id="entryText" value="#{forumEntryController.selected.entryText}" title="#{bundle.EditForumEntryTitle_entryText}" required="true" requiredMessage="#{bundle.EditForumEntryRequiredMessage_entryText}"/>
+                    <h:outputLabel value="#{bundle.EditForumEntryLabel_date}" for="date" />
+                    <h:inputText id="date" value="#{forumEntryController.selected.date}" title="#{bundle.EditForumEntryTitle_date}" required="true" requiredMessage="#{bundle.EditForumEntryRequiredMessage_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditForumEntryLabel_userid}" for="userid" />
+                    <h:inputText id="userid" value="#{forumEntryController.selected.userid}" title="#{bundle.EditForumEntryTitle_userid}" required="true" requiredMessage="#{bundle.EditForumEntryRequiredMessage_userid}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{forumEntryController.update}" value="#{bundle.EditForumEntrySaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditForumEntryViewLink}"/>
+                <br />
+                <h:commandLink action="#{forumEntryController.prepareList}" value="#{bundle.EditForumEntryShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditForumEntryIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
