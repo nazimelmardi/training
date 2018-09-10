@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/template/bstemplate.xhtml">
         <ui:define name="head">
             <h:head>
@@ -62,22 +61,20 @@
                 <div class="col-sm-12 col-md-6 rightside2">
                     
                     <div class="row">
-                    <h:form id="form1">                             
+                    <h:form id="subcom">                             
                         <h5>New Comment:</h5>
                         
                         <p:inputTextarea rows="5" cols="40" counter="display" maxlength="200" counterTemplate="{0} characters remaining." autoResize="false" value="#{commentSave.comment.commentText}" />
                         <h:outputText id="display" />
                         
-                        <p:commandButton  value="Save" ajax="false" update="@(body)" process="form1:form2" action="#{commentSave.saveComment(commentControllerList.forumEntry, request)}">                                            
-                            <f:param name="entryid" value="#{entries.id}"/>
-                        </p:commandButton>
+                        <p:commandButton  value="Save" update="subcom :comms" action="#{commentSave.saveComment(commentControllerList.forumEntry, request)}"/>
                     </h:form>
                     </div>
                     <hr></hr>
-                    <h:form id="form2">
+                    <h:form id="comms">
                           
                         
-                        <ui:repeat id="rep1" var="comments" value="#{commentControllerList.forumEntry.commentList}">
+                        <ui:repeat id="rep1" var="comments" value="#{commentSave.readAllComment(commentControllerList.forumEntry.id)}">
 
                             
                             <div class="card bg-light mb-3 mr-auto ml-auto" style="max-width: 22rem; min-width: 22rem;">

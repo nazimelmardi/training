@@ -64,6 +64,10 @@ public class CommentControllerSave implements Serializable{
         return tryout;
     }
     
+    public List<Comment>readAllComment(Long id){
+        return commentService.findCommentByEntryId(id);
+    }
+    
     @PostConstruct
     public void getInst(){
                             
